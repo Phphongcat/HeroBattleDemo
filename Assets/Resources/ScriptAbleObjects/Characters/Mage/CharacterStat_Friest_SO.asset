@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de000a020b841c1acc18b8cdc5935bf, type: 3}
+  m_Name: CharacterStat_Friest_SO
+  m_EditorClassIdentifier: 
+  id: 1
+  characterStats:
+  - level:
+      value: 1
+    health:
+      value: 100
+    healthRegen:
+      value: 2
+    mana:
+      value: 100
+    manaRegen:
+      value: 4
+    speed:
+      value: 2
+    canMove:
+      value: 1

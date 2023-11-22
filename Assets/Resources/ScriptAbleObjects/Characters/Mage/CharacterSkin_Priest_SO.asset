@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f76b1fb9d4f484691cb3b9cb487eb4, type: 3}
+  m_Name: CharacterSkin_Priest_SO
+  m_EditorClassIdentifier: 
+  characterID: 1
+  skins:
+  - skinID: 0
+    avatar: {fileID: 429122021, guid: 2dbae03b91144da4f8c135bf1809e439, type: 3}
+    animationController: {fileID: 9100000, guid: 22b33015b66719646972d5e6bc9727ab, type: 2}
+    animationStates:
+    - state: 0
+      clip: {fileID: 7400000, guid: 14590644925d2ad4aab109a320014b7a, type: 2}
+    - state: 1
+      clip: {fileID: 7400000, guid: 08a4aef0ee2783646b963fbd8bcdb7da, type: 2}
+    - state: 2
+      clip: {fileID: 7400000, guid: 5255934cfc652884080d9873b74ace6c, type: 2}
+  - skinID: 1
+    avatar: {fileID: 685735820, guid: b2ad8c5290303de48964a61a4bc2b403, type: 3}
+    animationController: {fileID: 9100000, guid: eea61c7d899ae444db165291d58b515c, type: 2}
+    animationStates:
+    - state: 0
+      clip: {fileID: 7400000, guid: e718c0550774af843966bfb463c6c497, type: 2}
+    - state: 1
+      clip: {fileID: 7400000, guid: 39ed334f1ec9d9344a5a29c4e509f93f, type: 2}
+    - state: 2
+      clip: {fileID: 7400000, guid: 6c5dacb1e27eeef4799a836b026c0556, type: 2}

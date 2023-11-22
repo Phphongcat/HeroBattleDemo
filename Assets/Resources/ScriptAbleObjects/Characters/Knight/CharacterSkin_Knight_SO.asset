@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f76b1fb9d4f484691cb3b9cb487eb4, type: 3}
+  m_Name: CharacterSkin_Knight_SO
+  m_EditorClassIdentifier: 
+  characterID: 0
+  skins:
+  - avatar: {fileID: 1030056268, guid: 2973c9d3d722b8348a951905025fe7a3, type: 3}
+    animationController: {fileID: 9100000, guid: 96011a357379006499f0a2d6bd4fd387, type: 2}
+    animationStates:
+    - state: 0
+      clip: {fileID: 7400000, guid: 35e1aab277689e84fb7fdeb03e60b4bc, type: 2}
+    - state: 1
+      clip: {fileID: 7400000, guid: c4154198427c08e41a7c3e1fdefd30f7, type: 2}
+    - state: 2
+      clip: {fileID: 7400000, guid: 72e36c0a6a2e0834ca91b90d0010f646, type: 2}
+  - avatar: {fileID: 1397187143, guid: 67459f1bf1213fe40b30f4e1d28cd504, type: 3}
+    animationController: {fileID: 9100000, guid: 3482ec40e97d629499a34f851e674bbb, type: 2}
+    animationStates:
+    - state: 0
+      clip: {fileID: 7400000, guid: 92b33b29e252d6542ae8d17bcaf9b94f, type: 2}
+    - state: 1
+      clip: {fileID: 7400000, guid: 113f629b5ee3dd5478d8e7eae127bb9f, type: 2}
+    - state: 2
+      clip: {fileID: 7400000, guid: c547a6061c9327b4b83067ecb4333501, type: 2}
