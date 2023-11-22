@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4e84f474321e7634fba9796cea3ce69e
+guid: 9629302bc5a19944f8b58e338770bec7
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -37,9 +37,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -69,12 +69,12 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 512
+    maxTextureSize: 64
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 2
+    textureCompression: 0
     compressionQuality: 50
-    crunchedCompression: 1
+    crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -149,127 +149,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: knight_1_skill_0_effect_0_0
+      name: Fences_0
       rect:
         serializedVersion: 2
-        x: 4
-        y: 0
-        width: 39
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 5
+        y: 20
+        width: 6
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aac76882bfa240045a07d55f9192fecf
-      internalID: 1063084601
+      spriteID: e1213afd8a27010458aa24632c661fa9
+      internalID: 1083934965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knight_1_skill_0_effect_0_1
+      name: Fences_1
       rect:
         serializedVersion: 2
-        x: 52
-        y: 0
-        width: 40
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 21
+        y: 20
+        width: 38
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a58e825737965747850ec6f2ad19820
-      internalID: -1712545914
+      spriteID: 4d35e2142a220f64c94d25b26e62e7e6
+      internalID: -852353556
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knight_1_skill_0_effect_0_2
+      name: Fences_2
       rect:
         serializedVersion: 2
-        x: 100
-        y: 0
-        width: 42
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 5
+        y: 4
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b04223e603f31e14a9d0a92a2a1d0151
-      internalID: 219903031
+      spriteID: c74c63e138d87dc4eaa52671283c813b
+      internalID: -257221685
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: knight_1_skill_0_effect_0_3
+      name: Fences_3
       rect:
         serializedVersion: 2
-        x: 144
-        y: 0
-        width: 45
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 21
+        y: 4
+        width: 38
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8c2b8ff4bb9a1f4abea84386ac8629c
-      internalID: 1993452097
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: knight_1_skill_0_effect_0_4
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 48
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f3270bc067facf0488e037897b161f4e
-      internalID: -1272177342
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: knight_1_skill_0_effect_0_5
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 0
-        width: 44
-        height: 48
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9bb979a10f47f04793081298a89217b
-      internalID: -16552076
+      spriteID: bddae519e296f7b46b7fd488091928a3
+      internalID: -941813921
       vertices: []
       indices: 
       edges: []
@@ -285,12 +243,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      knight_1_skill_0_effect_0_0: 1063084601
-      knight_1_skill_0_effect_0_1: -1712545914
-      knight_1_skill_0_effect_0_2: 219903031
-      knight_1_skill_0_effect_0_3: 1993452097
-      knight_1_skill_0_effect_0_4: -1272177342
-      knight_1_skill_0_effect_0_5: -16552076
+      Fences_0: 1083934965
+      Fences_1: -852353556
+      Fences_2: -257221685
+      Fences_3: -941813921
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
