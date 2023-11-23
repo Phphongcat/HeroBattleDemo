@@ -10,7 +10,9 @@ namespace QtNameSpace
     {
         [SerializeField] private MageSkillInfo model;
         [SerializeField] private LightningBoltScript lightning;
-        [SerializeField] private QtEventListener listener;
+        private Transform _target;
+        private bool _isDone = true;
+        private float _timing;
 
         
         public override void OtherInit()
@@ -22,9 +24,6 @@ namespace QtNameSpace
 
         public override void OtherRelease()
         {
-            if (IsInvoking(nameof(InvokeLightning)))
-                CancelInvoke(nameof(InvokeLightning));
-            
             if(GameModel.Instance != null)
                 GameModel.Instance.RemoveModel<MageSkillInfo>();
             
@@ -37,36 +36,53 @@ namespace QtNameSpace
 
         public void EmitSpell()
         {
-            if (IsInvoking(nameof(InvokeLightning)))
-                CancelInvoke(nameof(InvokeLightning));
-            
             lightning.gameObject.SetActive(true);
-            listener.StartListening(GameEventID.EnemyDead, InvokeLightning);
-            InvokeRepeating(nameof(InvokeLightning), default, model.second.RuntimeValue);
+            _timing = model.second.RuntimeValue;
+            _isDone = false;
         }
 
         public void ReleaseSpell()
         {
-            if (IsInvoking(nameof(InvokeLightning)))
-                CancelInvoke(nameof(InvokeLightning));
-            
-            listener.StopListening(GameEventID.EnemyDead);
+            _isDone = true;
             lightning.gameObject.SetActive(false);
+        }
+
+        private void Update()
+        {
+            if(IsRelease || _isDone)
+                return;
+
+            InvokeLightning();
         }
 
         private void InvokeLightning()
         {
+            if (_target != null)
+            {
+                _timing -= Time.deltaTime;
+                if (_timing > (float)default)
+                    return;
+                
+                _target.GetComponent<IHeart>().TakeDamage(model.damaged.RuntimeValue);
+            }
+            _timing = model.second.RuntimeValue;
+            
             var enemyEmitPoints = FindObjectsByType<EnemyEmitPoint>(FindObjectsSortMode.None);
-            if(enemyEmitPoints is null || enemyEmitPoints.Any() is false)
+            if (enemyEmitPoints is null || enemyEmitPoints.Any() is false)
+            {
+                lightning.ForceUpdate(gameObject);
                 return;
+            }
         
             var nearest = GetClosestEnemy(enemyEmitPoints.ToList());
             if(nearest is null || CheckInRange(nearest.transform) is false)
+            {
+                lightning.ForceUpdate(gameObject);
                 return;
+            }
             
-            var enemyTarget = nearest.transform.root != null ? nearest.transform.root : nearest.transform;
-            lightning.EndObject = nearest.GetEmitPoint().gameObject;
-            enemyTarget.GetComponent<IHeart>().TakeDamage(model.damaged.RuntimeValue);
+            _target = nearest.transform.root != null ? nearest.transform.root : nearest.transform;
+            lightning.ForceUpdate(nearest.GetEmitPoint().gameObject);
         }
         
         private bool CheckInRange(Transform targetPoint)

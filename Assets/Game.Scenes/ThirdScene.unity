@@ -902,10 +902,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   useDontDestroyOnLoad: 0
   sizeLimit: 20
-  timing: 6
-  decrementTiming: 0.25
+  timing: 4
+  decrementTiming: 0.2
   minLimitTiming: 2
-  decrementPerEnemyDeadTiming: 5
+  decrementPerEnemyDeadTiming: 6
   maxRange: {x: 3, y: 3}
   minRange: {x: -3, y: -3}
   animPrefab: {fileID: 6877177688973766394, guid: 14d0dbbb3f06ce347a35558456a60892, type: 3}
@@ -1303,7 +1303,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: 21300000, guid: aeaf3fa8a722bb34ea854a66856b96e5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2108,6 +2108,8 @@ MonoBehaviour:
   - {fileID: 297661980}
   - {fileID: 1714968172}
   hurtAnimPrefab: {fileID: 3984082128936308492, guid: fb6421a7b8f8e0d4eaa4ba975f49925f, type: 3}
+  destroyOnDead:
+  - {fileID: 1294609011}
 --- !u!1 &1676911872
 GameObject:
   m_ObjectHideFlags: 0
@@ -2224,7 +2226,7 @@ Transform:
   m_GameObject: {fileID: 1716204896}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0347, y: 0.0572, z: -0.124584414}
+  m_LocalPosition: {x: 0, y: 0.06, z: 0}
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []

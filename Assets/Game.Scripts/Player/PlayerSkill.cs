@@ -24,8 +24,8 @@ public class PlayerSkill : ABaseElement
             CancelInvoke(nameof(Countdown));
         
         model.Restore();
-        if (_skill != null && _skill.IsDestroyed() is false)
-            Destroy(_skill);
+        if (_skill != null && _skill.gameObject.IsDestroyed() is false)
+            Destroy(_skill.gameObject);
     }
 
     public override void UpdateView()

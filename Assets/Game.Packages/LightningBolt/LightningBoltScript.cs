@@ -97,6 +97,13 @@ namespace DigitalRuby.LightningBolt
         private int animationPingPongDirection = 1;
         private bool orthographic;
 
+        public void ForceUpdate(GameObject endObject)
+        {
+            EndObject = endObject;
+            timer = default;
+            Trigger();
+        }
+
         private void GetPerpendicularVector(ref Vector3 directionNormalized, out Vector3 side)
         {
             if (directionNormalized == Vector3.zero)
@@ -329,12 +336,11 @@ namespace DigitalRuby.LightningBolt
             }
             if (EndObject == null)
             {
-                end = EndPosition;
+                end = StartPosition + EndPosition;
             }
             else
             {
-                EndPosition = EndObject.transform.position;
-                end = EndPosition;
+                end = EndObject.transform.position;
             }
             startIndex = 0;
             GenerateLightningBolt(start, end, Generations, Generations, 0.0f);

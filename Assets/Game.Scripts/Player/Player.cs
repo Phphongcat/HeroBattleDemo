@@ -1,5 +1,4 @@
-﻿using System;
-using Cysharp.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Game.Scripts.Common;
 using Unity.Mathematics;
 using UnityEngine;
@@ -9,8 +8,9 @@ namespace QtNameSpace
     public class Player : ABasePresenter, IHeart
     {
         [SerializeField] private HurtAnim hurtAnimPrefab;
-        
-        
+        [SerializeField] private List<GameObject> destroyOnDead = new();
+
+
         public override void InitModel()
         {
             var statModel = GameConfig.CharacterStatContainer.Selected.At(GameConfig.Instance.SelectedLevel);
@@ -45,7 +45,7 @@ namespace QtNameSpace
             {
                 Release();
                 ObserverEvent.EmitEvent(GameEventID.PlayerDead, 1f);
-                Destroy(gameObject);
+                OnDead();
             }
             else
                 ObserverEvent.EmitEvent(GameEventID.PlayerHurt);
@@ -63,6 +63,16 @@ namespace QtNameSpace
             var isLeft = transform.rotation.eulerAngles.y != 0;
             var rig2D = GetComponent<Rigidbody2D>();
             rig2D.AddForce(isLeft ? Vector2.right : Vector2.left, ForceMode2D.Impulse);
+        }
+
+        private void OnDead()
+        {
+            elements.Clear();
+            GetComponent<Collider2D>().isTrigger = true;
+            
+            foreach (var item in destroyOnDead)
+                Destroy(item);
+            Destroy(this);
         }
     }
 }

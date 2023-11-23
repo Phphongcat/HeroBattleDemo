@@ -8,7 +8,7 @@ public class PlayerWeapon : ABaseElement
     [SerializeField] private Transform weaponPoint;
     
     [Header("Debug")]
-    [SerializeField] private QtNameSpace.Weapon weapon;
+    [SerializeField] private Weapon weapon;
 
 
     public override void OtherInit()
@@ -16,21 +16,21 @@ public class PlayerWeapon : ABaseElement
         if (weapon != null && weapon.IsDestroyed() is false)
             Destroy(weapon);
         
-        if(weaponContainerTrans.GetComponentInChildren<QtNameSpace.Weapon>() != null)
+        if(weaponContainerTrans.GetComponentInChildren<Weapon>() != null)
             return;
 
         var ins = Instantiate(
             GameConfig.WeaponInfoContainer.Selected.weaponPrefab,
             Vector3.zero, Quaternion.identity, weaponContainerTrans);
-        weapon = ins.GetComponent<QtNameSpace.Weapon>();
+        weapon = ins.GetComponent<Weapon>();
         weapon.transform.position = weaponPoint.position;
     }
 
     public override void OtherRelease()
     {
         weapon.Release();
-        if (weapon != null && weapon.IsDestroyed() is false)
-            Destroy(weapon);
+        if (weapon != null && weapon.gameObject.IsDestroyed() is false)
+            Destroy(weapon.gameObject);
     }
     
     public override void UpdateView()
